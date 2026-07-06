@@ -1,4 +1,3 @@
-// Dữ liệu bài viết (giả lập)
 const articles = {
   1: { title: "Áo khoác dạ nam mùa đông 2026", category: "Thời trang Nam", img: "https://image.made-in-china.com/155f0j00FOakhKRPEZpc/New-Style-Spring-and-Autumn-Season-Outfits-Men-s-Breathable-Wool-Coat.jpg",
        content: "Áo khoác dạ là item không thể thiếu cho phái mạnh trong mùa đông năm nay, với thiết kế tối giản, dễ phối đồ.", related: [2,3] },
@@ -22,11 +21,10 @@ const articles = {
        content: "Tông màu đất và pastel tiếp tục thống trị các bảng phối màu thời trang năm nay.", related: [11,12] },
   11:{ title: "Chất liệu vải bền vững", category: "Xu hướng", img: "https://mimifashion.vn/wp-content/uploads/2024/06/chat-lieu-vai-ben-vung-4.jpg",
        content: "Vải tái chế và hữu cơ đang được nhiều thương hiệu lớn ưu tiên sử dụng.", related: [10,12] },
-  12:{ title: "Phong cách tối giản Minimalism", category: "Xu hướng", img: "https://xhomesg.com.vn/wp-content/uploads/2024/09/tim-hieu-chung-ve-phong-cach-minimalism-4-1024x909.jpg",
+  12:{ title: "Phong cách tối giản Minimalism", category: "Xu hướng", img: "https://paradox.vn/wp-content/uploads/2026/03/phong-cach-minimalism-nu.jpg",
        content: "Phong cách tối giản với gam màu trung tính lên ngôi trong mùa mốt 2026.", related: [10,11] }
 };
 
-// ----- Trang chi tiết -----
 const contentEl = document.getElementById("content");
 if (contentEl) {
   const id = new URLSearchParams(location.search).get("id");
@@ -45,7 +43,6 @@ if (contentEl) {
     contentEl.innerHTML = "<p>Không tìm thấy bài viết.</p>";
   }
 
-  // Bình luận (lưu tạm bằng localStorage theo id bài viết)
   const commentForm = document.getElementById("commentForm");
   const commentList = document.getElementById("commentList");
   const storageKey = "comments_" + id;
@@ -76,7 +73,6 @@ if (contentEl) {
   loadComments();
 }
 
-// ----- Trang đăng nhập -----
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
   loginForm.addEventListener("submit", e => {
